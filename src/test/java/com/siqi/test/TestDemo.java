@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.siqi.dao.CategoryMapper;
+import com.siqi.model.Category;
 
 public class TestDemo {
 	private static ApplicationContext bean=new ClassPathXmlApplicationContext("spring\\applicationContext.xml");
@@ -12,6 +13,7 @@ public class TestDemo {
 	@Test
 	public void CateTest() {
 		categoryMapper=bean.getBean(CategoryMapper.class);
-		categoryMapper.deleteByPrimaryKey(5);
+		Category category=categoryMapper.selectByPrimaryKey(1);
+		System.out.println(category);
 	}
 }
