@@ -33,6 +33,8 @@
  -->    
 <!--     <mvc:resources location="/WEB-INF/views/order/" mapping="/order/**"/> 
  -->    
+ <!-- 配置全局异常类 -->
+    <bean class="com.siqi.common.SpringExceptionResolver"></bean>
 	<!-- 配置视图解析器 -->
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
 	<!-- 配置json解析器 -->

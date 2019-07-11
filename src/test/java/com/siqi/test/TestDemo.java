@@ -4,16 +4,15 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.siqi.dao.CategoryMapper;
-import com.siqi.model.Category;
+import com.siqi.dao.MesOrderCustomerMapper;
+
 
 public class TestDemo {
 	private static ApplicationContext bean=new ClassPathXmlApplicationContext("spring\\applicationContext.xml");
-	private CategoryMapper categoryMapper;
+	private MesOrderCustomerMapper mesOrderCustomerMapper;
 	@Test
 	public void CateTest() {
-		categoryMapper=bean.getBean(CategoryMapper.class);
-		Category category=categoryMapper.selectByPrimaryKey(1);
-		System.out.println(category);
+		mesOrderCustomerMapper=bean.getBean(MesOrderCustomerMapper.class);
+		System.out.println(mesOrderCustomerMapper.getOrderCount());
 	}
 }

@@ -35,6 +35,13 @@
   		<property name="removeAbandonedTimeout" value="180" /> <!-- 1800秒，也就是30分钟 -->
   		<property name="logAbandoned" value="true" /> <!-- 关闭abanded连接时输出错误日志 -->
     </bean>
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory"
+			ref="sqlSessionFactory"></constructor-arg>
+		<constructor-arg name="executorType" value="BATCH"></constructor-arg>
+	</bean>
+    
     <!--3.mybatis配置  -->
     <bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
